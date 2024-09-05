@@ -29,10 +29,11 @@ function walk(img, startPos, stopPos) {
 }
 function dance(img) {
   return new Promise((resolve) => {
+    const originalSrc = img.src;
     img.src = DANCING_CAT_URL;
 
     setTimeout(() => {
-      img.src = 'https://media1.tenor.com/images/2de63e950fb254920054f9bd081e8157/tenor.gif';
+      img.src = originalSrc;
       resolve ()
     }, DANCE_TIME_MS);
     
