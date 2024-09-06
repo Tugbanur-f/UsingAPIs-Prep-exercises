@@ -19,10 +19,9 @@ async function fetchJSON(url) {
   
   try {
     const response = await fetch(url);
-    const message = 'Not Found';
-    
+     
     if(!response.ok) {
-      throw new Error(message.error);
+      throw new Error('HTTP error: ' + response.statusText);
     }
     const data = await response.json();
     return data;
